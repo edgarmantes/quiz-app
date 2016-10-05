@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+	list-style: none;
+	text-align: center;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 70%;
+}
+
+
+/**********************
+header
+**********************/
+header {
+	width: 100%;
+	height: 200px;
+	font-size: 1.5rem;
+	background-color: blue;
+	color: white;
+}
+
+.greeting-header {
+	padding-top: 28px;
+}
+
+.greeting-header > h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.question {
+	padding-top: 31px;
+}
+
+.hidden {
+	display: none;
+}
+
+/**********************
+**********************/
