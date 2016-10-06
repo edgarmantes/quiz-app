@@ -2,7 +2,7 @@
 
 
 //render elements
-function questionFactory(text, choices, answer){
+function Question(text, choices, answer){
 	return {
 		question: text,
 		choose: choices,
