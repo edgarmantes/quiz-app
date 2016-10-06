@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Quiz-Me</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="container">
-		<header class="top">
-			<div class="greeting-header">
-				<h1>Quiz-Me</h1>
-				<h5>Topic: Important basic healthcare</h5>
-			</div>
-			<div class="question hidden">
-				<h2 class="js-question-entry">Question</h2>
-			</div>
+	<head>
+		<meta charset="utf-8">
+		<title>Quiz-Me</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<header class="top">
+				<div class="greeting-header">
+					<h1>Quiz-Me</h1>
+					<h5>Topic: Important basic healthcare</h5>
+				</div>
+				<div class="question hidden">
+					<h2 class="js-question-entry">Question</h2>
+					<p class="score"></p>
+				</div>
 
-		</header>
+			</header>
 
-		<main>
-			<div class="greeting-button hidden">
-				<button class="start-button">Quiz BEGIN!</button>
-			</div>
-			<ul class="options">
-				<li><button class="js-sel-a">A</button></li>
-				<li><button class="js-sel-b">B</button></li>
-				<li><button class="js-sel-c">C</button></li>
-				<li><button class="js-sel-d">D</button></li>
-			</ul>
-		</main>
-		<footer>
-			<div class="">
-				<span class="js-question-tracker">1 of 10</span>
-			</div>
-		</footer>
-	</div>
+			<main>
+				<div class="greeting-button hidden">
+					<button class="start-button">Quiz BEGIN!</button>
+				</div>
+				<ul class="options">
+					<li><button class="js-sel-a">A</button></li>
+					<li><button class="js-sel-b">B</button></li>
+					<li><button class="js-sel-c">C</button></li>
+					<li><button class="js-sel-d">D</button></li>
+				</ul>
+			</main>
+			<footer>
+				<div class="foot">
+					<span class="js-question-tracker">1 of 10</span>
+				</div>
+			</footer>
+		</div>
 
 
-<!-- <script type="text/javascript" src="jQuery"></script> -->
-<!-- <script type="text/javascript" src="app.js"></script> -->
-</body>
+		<script type="text/javascript" src="jQuery"></script>
+		<script type="text/javascript" src="questions.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
 </html>
