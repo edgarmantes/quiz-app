@@ -15,7 +15,7 @@ function Question(text, choices, answer){
 
 function renderHtml(object, element1, element2){
 	var questionItem = object.question;
-	$('.js-question-entry').html('')
+	$('.js-question-entry').html('');
     $('ul').html('');
 	var itemsHTML = object.choose.map(function(item, index){
 		return '<li><button class="button ' + index + '">' + item + '</button></li>'
@@ -54,10 +54,8 @@ function handleClicks(){
 	$('.container').on('click', '.start-button', function(event){
 		renderHtml(questions[0], $('.options'), $('.js-question-entry'));
 		renderQuestNum(questionIndex, questions.length);
-		$('.question, .options').removeClass('hidden');
-		$('.greeting-header, .greeting-button').addClass('hidden');
-		$('.foot').toggleClass('hidden');
-		$('.score').toggleClass('hidden');	
+		$('.question, .options, .foot, .score').removeClass('hidden');
+		$('.greeting-header, .greeting-button').addClass('hidden');	
 
 	});
 
@@ -81,10 +79,11 @@ function handleClicks(){
 			renderScore(score, questions.length);
 			renderQuestNum(questionIndex, questions.length);
 		} else {
-			alert("DONE!!!! How did you think you did? ")
-			//
-			//
-			//
+			alert("DONE!!!! How did you think you did? ");
+			$('.question, .options, .foot, .score').addClass('hidden');
+			$('.greeting-button, .js-restart, .ender').removeClass('hidden');
+			$('.js-ender').html("You're Done!... Finally!")
+			$('.final_score').html('You had a totoal of ' + score + ' out of ' + questions.length + ' correct. Are you satisfied with that?');
 		}
 		
 	})
