@@ -37,27 +37,34 @@ function wrongAnswer(input, answer){
 }
 
 
-function renderScore (score){
+function renderScore (score, q_length){
+	$('.score').html('');
+	$('.score').html(score + ' points out of ' + q_length + ' possible');
 
 }
 
 
-function renderQuestNum (index){
-	
+function renderQuestNum (current, length){
+	$('.foot').html('');
+	$('.foot').html('Question  ' + current + '  out of  ' + length);
 }
 
 //  Event Listeners
 function handleClicks(){
 	$('.container').on('click', '.start-button', function(event){
 		renderHtml(questions[0], $('.options'), $('.js-question-entry'));
+		renderQuestNum(questionIndex, questions.length);
 		$('.question, .options').removeClass('hidden');
 		$('.greeting-header, .greeting-button').addClass('hidden');
+		$('.foot').toggleClass('hidden');
+		$('.score').toggleClass('hidden');	
+
 	});
 
 	var score = 0;
 	var questionIndex = 0;
 	$('ul.options').on('click', '.button', function (event){
-	
+
 		var input = $(this).text();
 		var answer = questions[questionIndex].correct;
 		questionIndex++;
@@ -65,13 +72,21 @@ function handleClicks(){
 			rightAnswer(input);
 			renderHtml(questions[questionIndex], $('.options'), $('.js-question-entry'));
 			score++;
+			renderScore(score, questions.length);
+			renderQuestNum(questionIndex, questions.length);
+
 		} else if ( input !== answer && questions.length > questionIndex){
 			wrongAnswer(input, answer);
 			renderHtml(questions[questionIndex], $('.options'), $('.js-question-entry'));
+			renderScore(score, questions.length);
+			renderQuestNum(questionIndex, questions.length);
 		} else {
 			alert("DONE!!!! How did you think you did? ")
+			//
+			//
+			//
 		}
-		console.log(score);
+		
 	})
 
 }

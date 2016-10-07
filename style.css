@@ -26,6 +26,7 @@ header {
 	font-size: 1.5rem;
 	background-color: blue;
 	color: white;
+	position: relative;
 }
 
 .greeting-header {
@@ -39,10 +40,24 @@ header {
 
 .question {
 	padding-top: 31px;
+	height: 60%;
+}
+
+.js-question-entry {
+	max-height: 100%;
+	padding: none;
+	margin: 0;
 }
 
 .hidden {
 	display: none;
+}
+
+.score {
+	position: absolute;
+	left: 20px;
+	bottom: 15px;
+	margin: 0;
 }
 
 /**********************
