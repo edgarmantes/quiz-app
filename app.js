@@ -46,7 +46,7 @@ function renderScore (score, q_length){
 
 function renderQuestNum (current, length){
 	$('.foot').html('');
-	$('.foot').html('Question  ' + current + '  out of  ' + length);
+	$('.foot').html('Question  ' + (current + 1) + '  out of  ' + length);
 }
 
 //  Event Listeners
